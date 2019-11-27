@@ -3,7 +3,7 @@ title: One-Punch-Man                  #你博客的标题
 SEOTitle: 一拳超人的博客 | One-Punch-Man     #显示在浏览器上搜索的时候显示的标题
 header-img: img/man-1.jpg                #显示在首页的背景图片
 email: liu1423248687@gmail.com  #你的邮箱
-description: "Every failure is leading towards success."    #网站介绍
+description: "一拳超人的个人修行记录"    #网站介绍
 keyword: "Liuzebo"      #关键词
 url: "http://1423248687.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -19,10 +19,10 @@ sidebar-avatar: /img/touxiang.png      # 个人头像
 # SNS settings  #社交账号
 RSS: false  
 # weibo_username:     qiubaiying
-zhihu_username:     liuzebo
-github_username:    1423248687
+# zhihu_username:     liuzebo #知乎
+github_username:    1423248687 #git账号
 #facebook_username:  baiying.qiu.7
-#jianshu_username:   e71990ada2fd
+# jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
 
@@ -91,7 +91,7 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#000000" #标签颜色
+chrome-tab-theme-color: "#7FFFD4" #标签颜色
 service-worker: true
 
 
