@@ -2,7 +2,7 @@
 layout:     post
 title:      Markdown的初步认识
 subtitle:   第一次接触Markdown
-date:       2019-11-29
+date:       2020-1-20
 author:     One-Punch-Man
 header-img: "img/man-5.jpg"
 catalog: true
