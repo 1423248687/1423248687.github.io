@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:     day_11
+title:     OSI与TCP/IP协议簇、物理层
 subtitle:  OSI与TCP/IP协议簇、物理层
 date:       2020-5-8
 author:     One-Punch-Man
@@ -8,7 +8,7 @@ header-img: "img/man-6.jpg"
 catalog: true
 tags: 
      - 网络安全
-     - 千锋教育
+     - 基础知识
 ---
 
 # OSI与TCP/IP协议簇
@@ -40,21 +40,21 @@ tags:
 
 - **物理层（Physical Layer）**在局部局域网上传送[数据帧](https://zh.wikipedia.org/wiki/数据帧)（Data Frame），它负责管理电脑通信设备和网络媒体之间的互通。包括了针脚、电压、线缆规范、集线器、中继器、网卡、主机接口卡等。
 
-![osi](\img\day_11_01.png)
+![osi](..\img\day_11_01.png)
 
-![osi](\img\day_11_03.png)
+![osi](..\img\day_11_03.png)
 
 ## 数据的封装与解封 
 
-![osi](\img\day_11_02.png)
+![osi](..\img\day_11_02.png)
 
 ## TCP/IP协议簇
 
-![osi](\img\day_11_04.png)
+![osi](..\img\day_11_04.png)
 
 ## 设备与层的对应关系
 
-![osi](\img\day_11_05.png)
+![osi](..\img\day_11_05.png)
 
 # 物理层
 
@@ -93,6 +93,6 @@ tags:
 
 568A和568B是指用于8针[配线](https://baike.baidu.com/item/配线)（最常见的就是[RJ45](https://baike.baidu.com/item/RJ45)水晶头）模块插座/插头的两种颜色代码。按国际标准共有四种线序：T568A、T568B、USOC(8)、USOC(6)。一般常用的是前两种。
 
-![网线](\img\day_11_06.png)
+![网线](..\img\day_11_06.png)
 
-![](\img\day_11_07.jpg)
+![](..\img\day_11_07.jpg)

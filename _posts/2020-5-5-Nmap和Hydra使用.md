@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:     day_10
+title:     Nmap和Hydra使用
 subtitle:  扫描与爆破
 date:       2020-5-5
 author:     One-Punch-Man
@@ -8,7 +8,7 @@ header-img: "img/man-6.jpg"
 catalog: true
 tags: 
      - 网络安全
-     - 千锋教育
+     - 基础知识
 ---
 
 # 常见端口
@@ -167,6 +167,20 @@ tags:
 - `-V`:打印Nmap版本号并退出。
 - `-h`:打印一个短的帮助屏幕，列出大部分常用的 命令选项，这个功能与不带参数运行Nmap是相同的。
 
+### 常用指令
+
+```powershell
+nmap -Pn -sV www.moonsec.com
+nmap -Pn -sV 103.97.177.22
+nmap -Pn -sV 103.97.177.22 –O
+nmap -Pn -sV -A 103.97.177.22 
+nmap -Pn -sV 103.97.177.22 --open -oN moonsec.com.txt
+nmap -p0-65535 192.168.0.107
+nmap -v -A -F -iL target.com.txt -oX target_f.xml
+nmap -v -A -F -iL 1.txt -oN target_f.txt
+nmap -v -A -p1-65535 -iL target.com.txt -oX target_all.xml
+```
+
 # Hydra
 
 ### 语法
@@ -180,33 +194,45 @@ tags:
 ### 参数
 
 - `-R`:继续从上一次进度接着破解。
-
 - `-S `:采用SSL链接。
-
 - `-s PORT `:可通过这个参数指定非默认端口。
-
 - `-l LOGIN`:指定破解的用户，对特定用户破解。
-
 - `-L FILE `:指定用户名字典。
-
 - `-p PASS`:指定密码破解，少用，一般是采用密码字典。
-
 - `-P FILE`:指定密码字典。
-
 - `-e ns`:可选选项，n：空密码试探，s：使用指定用户和密码试探。
-
 - `-C FILE`:使用冒号分割格式，例如“登录名:密码”来代替-L/-P参数。
-
 - `-M FILE `:指定目标列表文件一行一条。
-
 - `-o FILE`:指定结果输出文件。
-
 - `-f `:在使用-M参数以后，找到第一对登录名或者密码的时候中止破解。
-
 - `-t TASKS`: 同时运行的线程数，默认为16。
-
 - `-w TIME`:设置最大超时的时间，单位秒，默认是30s。
-
 - `-v / -V `: 显示详细过程。
 
-  
+### 常用指令
+
+```powershell
+ssh
+hydra -L /root/user -P /root/passwd ssh://192.168.1.0 -f -o /root/crack.txt -V
+ftp
+hydra -L /root/user -P /root/passwd ftp://192.168.1.0 -f -o /root/crack.txt -V
+rdp
+hydra -L /root/user -P /root/passwd rdp://192.168.1.0 -f -o /root/crack.txt -V
+mssql
+hydra -L /root/user -P /root/passwd mssql://192.168.0.129 -f -o /root/crack.txt -v
+mysql
+hydra -L /root/user -P /root/passwd mysql://192.168.0.129 -f -o /root/crack.txt –v -s 3306
+oracle
+hydra -P /root/passwd oracle://192.168.0.129 -f -o /root/crack.txt –v
+redis
+hydra -P /root/passlist.txt -e nsr -t 16 192.168.0.101 redis
+postgresql 弱口令检测
+hydra -P /root/passlist.txt -e nsr -t 16 192.168.0.101 postgresql
+指定多个ip进行穷举
+hydra -L /root/user -P /root/passlist -M /root/ip.txt  -V -o /root/crack mysql -t 16
+hydra -L /root/user -P /root/passlist ssh://192.168.0.112 -vV -f
+hydra -L /root/user -P /root/passlist ssh://192.168.0.112 -vV -f -o /root/crack.txt
+hydra -L /root/user -P /root/passlist ftp://192.168.0.106 -vV -f -o /root/crack.txt
+hydra -l sa -P /root/passlist mssql://192.168.0.103 –vV
+```
+
